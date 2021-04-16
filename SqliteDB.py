@@ -19,6 +19,11 @@ conn.execute("insert into Train values ( 12437,'RAJDHANI EXP','16-04-2021','Kolk
 conn.execute("insert into Train values ( 12009,'SHATABDI EXP','16-04-2021','Mumbai','Ahmedabad','06:25AM','1:10PM');")
 
 #insert data for tickets 
+Result= conn.execute("select TrainID from Train")
+for Id in Result:
+      for i in range(20):
+            conn.execute("insert into Ticket values ("  + str(Id)[1:6]+str(i)+ "," +  str((random.getrandbits(1)))  +  "," + "'16-04-2021'," + str(Id)[1:6] + ",300" + ");" )
+
 
 
 conn.close()      
