@@ -6,7 +6,7 @@ except Exception as e:
       print('error')
 result = conn.execute("create table User(UserID int not null unique,Email varchar(30) not null,Password varchar(30) not null,IsAdmin boolean,primary key(UserID));")
 conn.execute("create table Train(TrainID int not null unique,Name varchar(30),Date varchar(30),LFrom varchar(30),LTo varchar(30),arrival_time varchar(30),Dep_time varchar(30),primary key(TrainID));")
-conn.execute("create table Ticket(TicketID int not null unique,Availability boolean,TDate date,TrainID int not null,Population int,foreign key(TrainID) references Train(TrainID),primary key(TicketID));")
+conn.execute("create table if not exists Tickets(trainname varchar(30) not null, _from varchar(30) not null, _to varchar(30) not null, data varchar(30) not null, ticketid unique, username varchar(30));")
 print(result)
 
 #insert data for user
